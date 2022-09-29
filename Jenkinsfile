@@ -15,9 +15,9 @@ pipeline {
         stage('Second stage'){
             steps{
                 sh 'pwd'
-                sh 'cd scriptDir'
-                sh 'chmod +x coolScript.sh'
-                sh './coolScript.sh'
+                sh 'ls'
+                sh 'chmod +x scriptDir/coolScript.sh'
+                sh './scriptDir/coolScript.sh'
             }
         }
     }
