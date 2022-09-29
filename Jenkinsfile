@@ -20,5 +20,19 @@ pipeline {
                 sh './scriptDir/coolScript.sh'
             }
         }
+        stage('Build'){
+            steps{
+                sh 'touch file.txt'
+                // Could ask you for password, Jenkins doesnt have explicit right to use sudo
+                // Jenkins can't explicitly do docker commands as it does not have sudo access or added to docker group 
+                // sh 'sudo file.txt' 
+                // `sudo vi /etc/sudoers` - in command line
+                // `jenkins ALL=(ALL) NOPASSWD: ALL` goes at the bottom of the file
+                // To escape visudo / vi use :qa!
+                sh 'sudo docker run -d -p 80:80 --name nginxJenkins nginx'
+                sh 'curl localhost:80'
+
+            }
+        }
     }
 }
