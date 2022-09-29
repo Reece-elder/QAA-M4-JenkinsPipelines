@@ -1,0 +1,1 @@
+echo "This is running in a script! :o"
