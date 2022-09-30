@@ -10,6 +10,7 @@ pipeline {
             steps {
                 // sh stands for shell, use shell to do echo Helloworld
                 sh 'echo "Hello World"'
+                sh 'mkdir newDir'
             }
         }
         stage('Second stage'){
@@ -33,6 +34,12 @@ pipeline {
                 sh 'curl localhost:80'
 
             }
+        }
+    }
+    post {
+        // Clean after build
+        always {
+            cleanWs()
         }
     }
 }
