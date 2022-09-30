@@ -2,7 +2,8 @@
 
 # Running a script that SSHs into our build ec2
 # EOF - End of File, chucking in a 'file' into our SSH command
-ssh ubuntu@13.40.181.102 <<EOF
+pwd
+ssh -i ~/var/lib/jenkins/.ssh/jenkins_key ubuntu@13.40.181.102 <<EOF
 
 # You would enter the commands to build your container
 # docker build -t coolImage .

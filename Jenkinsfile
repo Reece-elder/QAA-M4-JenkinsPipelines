@@ -32,9 +32,10 @@ pipeline {
                 // To escape visudo / vi use :qa!
                 // sh 'docker run -d -p 80:80 --name nginxJenkins nginx'
                 // sh 'curl localhost:80'
-                sh 'chmod +x scriptDir/ssh-nginx.sh'
-                sh './scriptDir/ssh-nginx.sh'
-
+                // sh 'chmod +x scriptDir/ssh-nginx.sh'
+                // sh './scriptDir/ssh-nginx.sh'
+                sh 'chmod +x scriptDir/ssh-build.sh'
+                sh './scriptDir/ssh-build.sh'
             }
         }
     }
